@@ -1,0 +1,1522 @@
+2020-04-01 18:18:28,724 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:18:28,972 - INFO - 306 : Starting usage telemetry collection
+2020-04-01 18:18:35,567 - INFO - 306 : Extracting user Data
+2020-04-01 18:18:35,568 - INFO - 306 : User has validation defined, no train rule based validation needed.
+2020-04-01 18:18:35,571 - INFO - 306 : SDK dependencies versions:{"azureml-widgets": "1.0.83", "azureml-train": "1.0.83", "azureml-train-restclients-hyperdrive": "1.0.83", "azureml-train-core": "1.0.83", "azureml-train-automl": "1.0.83", "azureml-train-automl-runtime": "1.0.83.1", "azureml-train-automl-client": "1.0.83", "azureml-tensorboard": "1.0.83", "azureml-telemetry": "1.0.83", "azureml-sdk": "1.0.83", "azureml-samples": "0+unknown", "azureml-pipeline": "1.0.83", "azureml-pipeline-steps": "1.0.83", "azureml-pipeline-core": "1.0.83", "azureml-opendatasets": "1.0.83", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-mlflow": "1.0.83", "azureml-interpret": "1.0.83", "azureml-explain-model": "1.0.83", "azureml-defaults": "1.0.83", "azureml-dataprep": "1.1.35", "azureml-dataprep-native": "13.2.0", "azureml-datadrift": "1.0.83", "azureml-core": "1.0.83", "azureml-contrib-services": "1.0.83", "azureml-contrib-server": "1.0.83", "azureml-contrib-reinforcementlearning": "1.0.83", "azureml-contrib-pipeline-steps": "1.0.83", "azureml-contrib-notebook": "1.0.83", "azureml-contrib-interpret": "1.0.83", "azureml-contrib-datadrift": "1.0.83", "azureml-automl-runtime": "1.0.83", "azureml-automl-core": "1.0.83.1"}.
+2020-04-01 18:18:35,572 - INFO - 306 : Start creating parent run with DTO:  - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['SVM', 'LinearSVM', 'MultinomialNaiveBayes', 'BernoulliNaiveBayes', 'KNN', 'LogisticRegression', 'RandomForest', 'LinearSVMClassifier', 'LightGBM', 'DecisionTree', 'ExtremeRandomTrees', 'XGBoostClassifier', 'GradientBoosting', 'AveragedPerceptronClassifier', 'TensorFlowLinearClassifier', 'SGD', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off.
+2020-04-01 18:18:39,007 - INFO - 306 : memory usage 579264512
+2020-04-01 18:18:39,012 - INFO - 306 : child memory usage 590573568
+2020-04-01 18:18:39,013 - INFO - 306 : cpu time 4.7418890000000005
+2020-04-01 18:18:39,020 - INFO - 306 : child cpu time 0.053938
+2020-04-01 18:18:43,045 - INFO - 306 : [ParentRunID:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3] Local run using input X and y.
+2020-04-01 18:18:43,054 - INFO - 306 : Parent Run ID: AutoML_55ca6412-c36d-42c1-952b-8354c34970d3
+2020-04-01 18:18:43,055 - INFO - 306 : [ParentRunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3]Input X datatype is <class 'numpy.ndarray'>, shape is (105, 4), datasize is 3360.
+2020-04-01 18:18:43,055 - INFO - 306 : [ParentRunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3]Input y datatype is <class 'numpy.ndarray'>, shape is (105,), datasize is 840.
+2020-04-01 18:18:43,056 - INFO - 306 : ActivityStarted, PreProcess
+2020-04-01 18:18:43,056 - INFO - 306 : [ParentRunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3]Input X_valid datatype is <class 'numpy.ndarray'>, shape is (45, 4), datasize is 1440.
+2020-04-01 18:18:43,056 - INFO - 306 : [ParentRunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3]Input y_valid datatype is <class 'numpy.ndarray'>, shape is (45,), datasize is 360.
+2020-04-01 18:18:43,574 - INFO - 306 : Pre-processing user data
+2020-04-01 18:18:43,575 - INFO - 306 : The size of raw data is: 6415
+2020-04-01 18:18:43,581 - INFO - 306 : [YCol]RawFeatureStats:{"num_unique_vals": "3", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"integer\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-01 18:18:43,582 - INFO - 306 : [XColNum:0]RawFeatureStats:{"num_unique_vals": "32", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-01 18:18:43,583 - INFO - 306 : [XColNum:1]RawFeatureStats:{"num_unique_vals": "20", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-01 18:18:43,584 - INFO - 306 : [XColNum:2]RawFeatureStats:{"num_unique_vals": "38", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-01 18:18:43,585 - INFO - 306 : [XColNum:3]RawFeatureStats:{"num_unique_vals": "21", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-01 18:18:43,585 - INFO - 306 : Start checking class balancing on y data.
+2020-04-01 18:18:43,586 - INFO - 306 : X datatype is <class 'numpy.ndarray'>, shape is (105, 4), datasize is 3360.
+2020-04-01 18:18:43,586 - INFO - 306 : y datatype is <class 'numpy.ndarray'>, shape is (105,), datasize is 840.
+2020-04-01 18:18:43,586 - INFO - 306 : X_valid datatype is <class 'numpy.ndarray'>, shape is (45, 4), datasize is 1440.
+2020-04-01 18:18:43,594 - INFO - 306 : y_valid datatype is <class 'numpy.ndarray'>, shape is (45,), datasize is 360.
+2020-04-01 18:18:43,594 - INFO - 306 : No preprocessing of data to be done here
+2020-04-01 18:18:45,443 - INFO - 306 : The size of transformed data is: 7005
+2020-04-01 18:18:45,444 - INFO - 306 : ActivityCompleted: Activity=PreProcess, HowEnded=Success, Duration=2388.65 [ms]
+2020-04-01 18:18:46,201 - INFO - 306 : Logging dataset information for AutoML_55ca6412-c36d-42c1-952b-8354c34970d3
+2020-04-01 18:18:46,202 - INFO - 306 : [ParentRunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3]X datatype is <class 'numpy.ndarray'>, shape is (105, 4), datasize is 3360.
+2020-04-01 18:18:46,202 - INFO - 306 : [ParentRunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3]y datatype is <class 'numpy.ndarray'>, shape is (105,), datasize is 840.
+2020-04-01 18:18:47,415 - INFO - 306 : Initialized ClientDatasets object from transformed_data_context.. deleting transformed_data_context.
+2020-04-01 18:18:49,052 - INFO - 306 : memory usage 585166848
+2020-04-01 18:18:49,053 - INFO - 306 : child memory usage 596475904
+2020-04-01 18:18:49,053 - INFO - 306 : cpu time 5.1935649999999995
+2020-04-01 18:18:49,053 - INFO - 306 : child cpu time 0.053938
+2020-04-01 18:18:50,682 - INFO - 306 : Start local loop.
+2020-04-01 18:18:50,683 - INFO - 306 : Start iteration: 0
+2020-04-01 18:18:50,683 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-01 18:18:50,683 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-01 18:18:50,684 - INFO - 306 : Querying Jasmine for next task.
+2020-04-01 18:18:51,148 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=464.77 [ms]
+2020-04-01 18:18:51,149 - INFO - 306 : Received pipeline ID 5dfac790c5c209f98a1da2dc1c7fb76f0397324f
+2020-04-01 18:18:53,631 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:18:53,631 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:18:53,657 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Starting fit_pipeline]memory usage 588455936
+2020-04-01 18:18:53,665 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Starting fit_pipeline]child memory usage 599764992
+2020-04-01 18:18:53,665 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Starting fit_pipeline]cpu time 5.410793
+2020-04-01 18:18:53,666 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Starting fit_pipeline]child cpu time 0.053938
+2020-04-01 18:18:53,667 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:18:53,667 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:18:53,667 - INFO - 306 : Using child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0
+2020-04-01 18:18:53,691 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before preprocess]memory usage 591736832
+2020-04-01 18:18:53,691 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before preprocess]child memory usage 603045888
+2020-04-01 18:18:53,691 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before preprocess]cpu time 5.426227
+2020-04-01 18:18:53,691 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before preprocess]child cpu time 0.053938
+2020-04-01 18:18:53,714 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before executing pipeline]memory usage 591736832
+2020-04-01 18:18:53,714 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before executing pipeline]child memory usage 603045888
+2020-04-01 18:18:53,714 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before executing pipeline]cpu time 5.436261
+2020-04-01 18:18:53,715 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][Before executing pipeline]child cpu time 0.053938
+2020-04-01 18:18:53,715 - INFO - 306 : Start executing pipeline {"objects": [{"spec_class": "preproc", "class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}}, {"spec_class": "sklearn", "class_name": "LightGBMClassifier", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"min_data_in_leaf": 20}, "prepared_kwargs": {}}], "pipeline_id": "5dfac790c5c209f98a1da2dc1c7fb76f0397324f", "module": "sklearn.pipeline", "class_name": "Pipeline"}.
+2020-04-01 18:18:53,715 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['SVM', 'LinearSVM', 'MultinomialNaiveBayes', 'BernoulliNaiveBayes', 'KNN', 'LogisticRegression', 'RandomForest', 'LinearSVMClassifier', 'LightGBM', 'DecisionTree', 'ExtremeRandomTrees', 'XGBoostClassifier', 'GradientBoosting', 'AveragedPerceptronClassifier', 'TensorFlowLinearClassifier', 'SGD', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-01 18:18:53,715 - INFO - 306 : Component PrepareData finished after 0.0013974666666666667 minutes.
+2020-04-01 18:18:53,716 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-01 18:18:56,055 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-01 18:18:56,056 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7ff194f67b38>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-01 18:18:59,105 - INFO - 306 : memory usage 592797696
+2020-04-01 18:18:59,106 - INFO - 306 : child memory usage 921505792
+2020-04-01 18:18:59,107 - INFO - 306 : cpu time 5.513516
+2020-04-01 18:18:59,107 - INFO - 306 : child cpu time 0.053938
+2020-04-01 18:18:59,818 - INFO - 448 : ActivityStarted: Run
+2020-04-01 18:19:00,402 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-01 18:19:00,404 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-01 18:19:00,584 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=179.99[ms]
+2020-04-01 18:19:00,585 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-01 18:19:00,585 - INFO - 448 : ActivityStarted: Predict
+2020-04-01 18:19:00,586 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=0.82[ms]
+2020-04-01 18:19:00,587 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-01 18:19:00,630 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=45.71[ms]
+2020-04-01 18:19:00,630 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=227.9[ms]
+2020-04-01 18:19:00,742 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=924.01[ms]
+2020-04-01 18:19:03,008 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=9292.84[ms]
+2020-04-01 18:19:03,044 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][After executing pipeline]memory usage 597954560
+2020-04-01 18:19:03,044 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][After executing pipeline]child memory usage 609263616
+2020-04-01 18:19:03,044 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][After executing pipeline]cpu time 5.6203009999999995
+2020-04-01 18:19:03,044 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][After executing pipeline]child cpu time 3.375199
+2020-04-01 18:19:03,045 - INFO - 306 : Pipeline execution finished with a score of 0.9555555555555556
+2020-04-01 18:19:03,045 - INFO - 306 : Start logging metrics for child run.
+2020-04-01 18:19:03,045 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-01 18:19:07,831 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-01 18:19:07,832 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-01 18:19:07,833 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-01 18:19:07,840 - INFO - 306 : run_id:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0, pipeline_id:5dfac790c5c209f98a1da2dc1c7fb76f0397324f,The following metrics have been logged for the child run: {'f1_score_weighted': 0.9553571428571429, 'AUC_weighted': 0.997037037037037, 'AUC_macro': 0.997037037037037, 'norm_macro_recall': 0.9333333333333332, 'precision_score_micro': 0.9555555555555556, 'recall_score_macro': 0.9555555555555556, 'accuracy': 0.9555555555555556, 'balanced_accuracy': 0.9555555555555556, 'average_precision_score_micro': 0.9859506698494868, 'log_loss': 0.23918095847885962, 'accuracy_table': <class 'dict'>, 'AUC_micro': 0.9925925925925926, 'average_precision_score_macro': 0.9945152505446623, 'f1_score_macro': 0.9553571428571429, 'f1_score_micro': 0.9555555555555556, 'recall_score_micro': 0.9555555555555556, 'weighted_accuracy': 0.9555555555555556, 'precision_score_weighted': 0.9607843137254902, 'precision_score_macro': 0.9607843137254902, 'average_precision_score_weighted': 0.9945152505446623, 'recall_score_weighted': 0.9555555555555556, 'confusion_matrix': <class 'dict'>, 'predict_time': 0.001541, 'fit_time': 0.179848, 'train time': 0.181389}.
+2020-04-01 18:19:07,840 - INFO - 306 : Marking the Run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0 as Completed.
+2020-04-01 18:19:09,049 - INFO - 306 : Component CompleteRun finished after 0.25695566666666664 minutes.
+2020-04-01 18:19:09,051 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-01 18:19:09,052 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=6007.34[ms]
+2020-04-01 18:19:09,148 - INFO - 306 : memory usage 607371264
+2020-04-01 18:19:09,148 - INFO - 306 : child memory usage 618680320
+2020-04-01 18:19:09,148 - INFO - 306 : cpu time 5.98072
+2020-04-01 18:19:09,148 - INFO - 306 : child cpu time 3.375199
+2020-04-01 18:19:10,498 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][End fit_pipeline]memory usage 609189888
+2020-04-01 18:19:10,498 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][End fit_pipeline]child memory usage 620498944
+2020-04-01 18:19:10,499 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][End fit_pipeline]cpu time 6.064835
+2020-04-01 18:19:10,499 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0][End fit_pipeline]child cpu time 3.484056
+2020-04-01 18:19:10,510 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=19826.84 [ms]
+2020-04-01 18:19:10,510 - INFO - 306 : Start iteration: 1
+2020-04-01 18:19:10,510 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-01 18:19:10,511 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-01 18:19:10,511 - INFO - 306 : Querying Jasmine for next task.
+2020-04-01 18:19:11,313 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=802.29 [ms]
+2020-04-01 18:19:11,313 - INFO - 306 : Received pipeline ID ebca1e73125a3c9a8c7ce93f7de1888095655021
+2020-04-01 18:19:13,024 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:13,029 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:13,065 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Starting fit_pipeline]memory usage 609222656
+2020-04-01 18:19:13,065 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Starting fit_pipeline]child memory usage 620531712
+2020-04-01 18:19:13,065 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Starting fit_pipeline]cpu time 6.181613
+2020-04-01 18:19:13,065 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Starting fit_pipeline]child cpu time 3.484056
+2020-04-01 18:19:13,066 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:13,066 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:13,066 - INFO - 306 : Using child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1
+2020-04-01 18:19:13,119 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before preprocess]memory usage 609222656
+2020-04-01 18:19:13,120 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before preprocess]child memory usage 620531712
+2020-04-01 18:19:13,120 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before preprocess]cpu time 6.204816
+2020-04-01 18:19:13,120 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before preprocess]child cpu time 3.484056
+2020-04-01 18:19:13,148 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before executing pipeline]memory usage 609226752
+2020-04-01 18:19:13,148 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before executing pipeline]child memory usage 620535808
+2020-04-01 18:19:13,148 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before executing pipeline]cpu time 6.224464
+2020-04-01 18:19:13,148 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][Before executing pipeline]child cpu time 3.484056
+2020-04-01 18:19:13,149 - INFO - 306 : Start executing pipeline {"objects": [{"class_name": "MinMaxScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "SGDClassifierWrapper", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"alpha": 0.8164183673469387, "class_weight": null, "eta0": 0.01, "fit_intercept": true, "l1_ratio": 0.36734693877551017, "learning_rate": "constant", "loss": "modified_huber", "max_iter": 1000, "penalty": "none", "power_t": 0.8888888888888888, "tol": 0.01}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "ebca1e73125a3c9a8c7ce93f7de1888095655021"}.
+2020-04-01 18:19:13,149 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['SVM', 'LinearSVM', 'MultinomialNaiveBayes', 'BernoulliNaiveBayes', 'KNN', 'LogisticRegression', 'RandomForest', 'LinearSVMClassifier', 'LightGBM', 'DecisionTree', 'ExtremeRandomTrees', 'XGBoostClassifier', 'GradientBoosting', 'AveragedPerceptronClassifier', 'TensorFlowLinearClassifier', 'SGD', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-01 18:19:13,149 - INFO - 306 : Component PrepareData finished after 0.0019859499999999998 minutes.
+2020-04-01 18:19:13,149 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-01 18:19:13,504 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-01 18:19:13,504 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7ff0e93e3080>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-01 18:19:17,173 - INFO - 448 : ActivityStarted: Run
+2020-04-01 18:19:17,428 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-01 18:19:17,429 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-01 18:19:17,433 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=4.1[ms]
+2020-04-01 18:19:17,434 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-01 18:19:17,435 - INFO - 448 : ActivityStarted: Predict
+2020-04-01 18:19:17,436 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.15[ms]
+2020-04-01 18:19:17,437 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-01 18:19:17,461 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=27.15[ms]
+2020-04-01 18:19:17,461 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=33.44[ms]
+2020-04-01 18:19:17,572 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=398.31[ms]
+2020-04-01 18:19:18,460 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=5310.9[ms]
+2020-04-01 18:19:18,502 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][After executing pipeline]memory usage 609255424
+2020-04-01 18:19:18,502 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][After executing pipeline]child memory usage 620564480
+2020-04-01 18:19:18,503 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][After executing pipeline]cpu time 6.301676
+2020-04-01 18:19:18,503 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][After executing pipeline]child cpu time 6.676493
+2020-04-01 18:19:18,503 - INFO - 306 : Pipeline execution finished with a score of 0.9333333333333333
+2020-04-01 18:19:18,503 - INFO - 306 : Start logging metrics for child run.
+2020-04-01 18:19:18,503 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-01 18:19:19,177 - INFO - 306 : memory usage 610131968
+2020-04-01 18:19:19,178 - INFO - 306 : child memory usage 621441024
+2020-04-01 18:19:19,178 - INFO - 306 : cpu time 6.357442
+2020-04-01 18:19:19,178 - INFO - 306 : child cpu time 6.676493
+2020-04-01 18:19:22,231 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-01 18:19:22,232 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-01 18:19:22,232 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-01 18:19:22,232 - INFO - 306 : run_id:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1, pipeline_id:ebca1e73125a3c9a8c7ce93f7de1888095655021,The following metrics have been logged for the child run: {'f1_score_weighted': 0.9326599326599326, 'AUC_weighted': 0.9888888888888889, 'AUC_macro': 0.9888888888888889, 'norm_macro_recall': 0.8999999999999997, 'precision_score_micro': 0.9333333333333333, 'recall_score_macro': 0.9333333333333332, 'accuracy': 0.9333333333333333, 'balanced_accuracy': 0.9333333333333332, 'average_precision_score_micro': 0.9752042939054923, 'log_loss': 0.37820231831928763, 'accuracy_table': <class 'dict'>, 'AUC_micro': 0.9871604938271605, 'average_precision_score_macro': 0.979078024372142, 'f1_score_macro': 0.9326599326599326, 'f1_score_micro': 0.9333333333333333, 'recall_score_micro': 0.9333333333333333, 'weighted_accuracy': 0.9333333333333333, 'precision_score_weighted': 0.9444444444444444, 'precision_score_macro': 0.9444444444444445, 'average_precision_score_weighted': 0.9790780243721421, 'recall_score_weighted': 0.9333333333333333, 'confusion_matrix': <class 'dict'>, 'predict_time': 0.001828, 'fit_time': 0.003954, 'train time': 0.005782}.
+2020-04-01 18:19:22,233 - INFO - 306 : Marking the Run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1 as Completed.
+2020-04-01 18:19:23,444 - INFO - 306 : Component CompleteRun finished after 0.17357378333333334 minutes.
+2020-04-01 18:19:23,449 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-01 18:19:23,450 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=4946.56[ms]
+2020-04-01 18:19:24,645 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][End fit_pipeline]memory usage 617574400
+2020-04-01 18:19:24,646 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][End fit_pipeline]child memory usage 628883456
+2020-04-01 18:19:24,646 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][End fit_pipeline]cpu time 6.67791
+2020-04-01 18:19:24,646 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1][End fit_pipeline]child cpu time 6.676493
+2020-04-01 18:19:24,649 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=14138.18 [ms]
+2020-04-01 18:19:24,649 - INFO - 306 : Start iteration: 2
+2020-04-01 18:19:24,649 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-01 18:19:24,649 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-01 18:19:24,650 - INFO - 306 : Querying Jasmine for next task.
+2020-04-01 18:19:25,868 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1218.2 [ms]
+2020-04-01 18:19:25,872 - INFO - 306 : Received pipeline ID fc458caef1af1a907c9958484a5909cf538b016d
+2020-04-01 18:19:27,247 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:27,251 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:27,285 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Starting fit_pipeline]memory usage 617701376
+2020-04-01 18:19:27,285 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Starting fit_pipeline]child memory usage 629010432
+2020-04-01 18:19:27,285 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Starting fit_pipeline]cpu time 6.806624
+2020-04-01 18:19:27,286 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Starting fit_pipeline]child cpu time 6.676493
+2020-04-01 18:19:27,286 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:27,287 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:27,287 - INFO - 306 : Using child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2
+2020-04-01 18:19:27,321 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before preprocess]memory usage 617701376
+2020-04-01 18:19:27,322 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before preprocess]child memory usage 629010432
+2020-04-01 18:19:27,322 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before preprocess]cpu time 6.826621
+2020-04-01 18:19:27,322 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before preprocess]child cpu time 6.676493
+2020-04-01 18:19:27,349 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before executing pipeline]memory usage 617701376
+2020-04-01 18:19:27,349 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before executing pipeline]child memory usage 629010432
+2020-04-01 18:19:27,349 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before executing pipeline]cpu time 6.848015
+2020-04-01 18:19:27,349 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][Before executing pipeline]child cpu time 6.676493
+2020-04-01 18:19:27,350 - INFO - 306 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": true, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesClassifier", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "class_weight": "balanced", "criterion": "entropy", "max_features": 0.9, "min_samples_leaf": 0.08736842105263157, "min_samples_split": 0.15052631578947367, "n_estimators": 10, "oob_score": true}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "fc458caef1af1a907c9958484a5909cf538b016d"}.
+2020-04-01 18:19:27,350 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['SVM', 'LinearSVM', 'MultinomialNaiveBayes', 'BernoulliNaiveBayes', 'KNN', 'LogisticRegression', 'RandomForest', 'LinearSVMClassifier', 'LightGBM', 'DecisionTree', 'ExtremeRandomTrees', 'XGBoostClassifier', 'GradientBoosting', 'AveragedPerceptronClassifier', 'TensorFlowLinearClassifier', 'SGD', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-01 18:19:27,350 - INFO - 306 : Component PrepareData finished after 0.0016401833333333333 minutes.
+2020-04-01 18:19:27,350 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-01 18:19:27,830 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-01 18:19:27,831 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7ff0e8362fd0>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-01 18:19:29,212 - INFO - 306 : memory usage 617721856
+2020-04-01 18:19:29,217 - INFO - 306 : child memory usage 725856256
+2020-04-01 18:19:29,217 - INFO - 306 : cpu time 6.92818
+2020-04-01 18:19:29,217 - INFO - 306 : child cpu time 6.676493
+2020-04-01 18:19:31,648 - INFO - 448 : ActivityStarted: Run
+2020-04-01 18:19:31,940 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-01 18:19:31,942 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-01 18:19:31,962 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=20.14[ms]
+2020-04-01 18:19:31,963 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-01 18:19:31,965 - INFO - 448 : ActivityStarted: Predict
+2020-04-01 18:19:31,966 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.4[ms]
+2020-04-01 18:19:31,967 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-01 18:19:31,988 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=24.97[ms]
+2020-04-01 18:19:31,989 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=48.61[ms]
+2020-04-01 18:19:32,121 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=473.27[ms]
+2020-04-01 18:19:32,900 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=5549.63[ms]
+2020-04-01 18:19:32,941 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][After executing pipeline]memory usage 618610688
+2020-04-01 18:19:32,941 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][After executing pipeline]child memory usage 629919744
+2020-04-01 18:19:32,941 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][After executing pipeline]cpu time 6.976166
+2020-04-01 18:19:32,941 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][After executing pipeline]child cpu time 9.964165
+2020-04-01 18:19:32,941 - INFO - 306 : Pipeline execution finished with a score of 0.9555555555555556
+2020-04-01 18:19:32,942 - INFO - 306 : Start logging metrics for child run.
+2020-04-01 18:19:32,942 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-01 18:19:36,842 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-01 18:19:36,843 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-01 18:19:36,844 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-01 18:19:36,844 - INFO - 306 : run_id:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2, pipeline_id:fc458caef1af1a907c9958484a5909cf538b016d,The following metrics have been logged for the child run: {'f1_score_weighted': 0.9553571428571429, 'AUC_weighted': 0.9940740740740741, 'AUC_macro': 0.994074074074074, 'norm_macro_recall': 0.9333333333333332, 'precision_score_micro': 0.9555555555555556, 'recall_score_macro': 0.9555555555555556, 'accuracy': 0.9555555555555556, 'balanced_accuracy': 0.9555555555555556, 'average_precision_score_micro': 0.9887493413850003, 'log_loss': 0.44113488057521005, 'accuracy_table': <class 'dict'>, 'AUC_micro': 0.9945679012345678, 'average_precision_score_macro': 0.9867024587612822, 'f1_score_macro': 0.9553571428571429, 'f1_score_micro': 0.9555555555555556, 'recall_score_micro': 0.9555555555555556, 'weighted_accuracy': 0.9555555555555556, 'precision_score_weighted': 0.9607843137254902, 'precision_score_macro': 0.9607843137254902, 'average_precision_score_weighted': 0.9867024587612823, 'recall_score_weighted': 0.9555555555555556, 'confusion_matrix': <class 'dict'>, 'predict_time': 0.00252, 'fit_time': 0.019918, 'train time': 0.022438000000000003}.
+2020-04-01 18:19:36,844 - INFO - 306 : Marking the Run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2 as Completed.
+2020-04-01 18:19:38,056 - INFO - 306 : Component CompleteRun finished after 0.18007201666666667 minutes.
+2020-04-01 18:19:38,056 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-01 18:19:38,057 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=5114.68[ms]
+2020-04-01 18:19:39,271 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][End fit_pipeline]memory usage 619175936
+2020-04-01 18:19:39,272 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][End fit_pipeline]child memory usage 630484992
+2020-04-01 18:19:39,273 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][End fit_pipeline]cpu time 7.303418
+2020-04-01 18:19:39,273 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2][End fit_pipeline]child cpu time 9.964165
+2020-04-01 18:19:39,283 - INFO - 306 : memory usage 619175936
+2020-04-01 18:19:39,283 - INFO - 306 : child memory usage 630484992
+2020-04-01 18:19:39,283 - INFO - 306 : cpu time 7.300729
+2020-04-01 18:19:39,284 - INFO - 306 : child cpu time 9.964165
+2020-04-01 18:19:39,286 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=14636.98 [ms]
+2020-04-01 18:19:39,286 - INFO - 306 : Start iteration: 3
+2020-04-01 18:19:39,287 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-01 18:19:39,287 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-01 18:19:39,287 - INFO - 306 : Querying Jasmine for next task.
+2020-04-01 18:19:40,441 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1153.49 [ms]
+2020-04-01 18:19:40,441 - INFO - 306 : Received pipeline ID 75cc4131135a51744d748dedb03da83cafd8f63d
+2020-04-01 18:19:41,812 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:41,813 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:41,849 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Starting fit_pipeline]memory usage 622571520
+2020-04-01 18:19:41,849 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Starting fit_pipeline]child memory usage 633880576
+2020-04-01 18:19:41,849 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Starting fit_pipeline]cpu time 7.487088
+2020-04-01 18:19:41,850 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Starting fit_pipeline]child cpu time 9.964165
+2020-04-01 18:19:41,850 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:41,851 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:41,851 - INFO - 306 : Using child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3
+2020-04-01 18:19:41,875 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before preprocess]memory usage 622571520
+2020-04-01 18:19:41,875 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before preprocess]child memory usage 633880576
+2020-04-01 18:19:41,875 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before preprocess]cpu time 7.504121
+2020-04-01 18:19:41,875 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before preprocess]child cpu time 9.964165
+2020-04-01 18:19:41,913 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before executing pipeline]memory usage 622571520
+2020-04-01 18:19:41,913 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before executing pipeline]child memory usage 633880576
+2020-04-01 18:19:41,913 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before executing pipeline]cpu time 7.512701
+2020-04-01 18:19:41,913 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][Before executing pipeline]child cpu time 9.964165
+2020-04-01 18:19:41,913 - INFO - 306 : Start executing pipeline {"objects": [{"class_name": "MinMaxScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "SGDClassifierWrapper", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"alpha": 8.775522448979592, "class_weight": "balanced", "eta0": 0.01, "fit_intercept": true, "l1_ratio": 0.8775510204081632, "learning_rate": "constant", "loss": "log", "max_iter": 1000, "penalty": "none", "power_t": 0.2222222222222222, "tol": 0.01}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "75cc4131135a51744d748dedb03da83cafd8f63d"}.
+2020-04-01 18:19:41,914 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['SVM', 'LinearSVM', 'MultinomialNaiveBayes', 'BernoulliNaiveBayes', 'KNN', 'LogisticRegression', 'RandomForest', 'LinearSVMClassifier', 'LightGBM', 'DecisionTree', 'ExtremeRandomTrees', 'XGBoostClassifier', 'GradientBoosting', 'AveragedPerceptronClassifier', 'TensorFlowLinearClassifier', 'SGD', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-01 18:19:41,914 - INFO - 306 : Component PrepareData finished after 0.0016676833333333333 minutes.
+2020-04-01 18:19:41,914 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-01 18:19:42,272 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-01 18:19:42,273 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7ff0e836ce80>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-01 18:19:45,790 - INFO - 448 : ActivityStarted: Run
+2020-04-01 18:19:46,037 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-01 18:19:46,040 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-01 18:19:46,043 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=3.86[ms]
+2020-04-01 18:19:46,044 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-01 18:19:46,045 - INFO - 448 : ActivityStarted: Predict
+2020-04-01 18:19:46,045 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=0.73[ms]
+2020-04-01 18:19:46,047 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-01 18:19:46,068 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=23.72[ms]
+2020-04-01 18:19:46,068 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=30.49[ms]
+2020-04-01 18:19:46,181 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=390.73[ms]
+2020-04-01 18:19:46,941 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=5026.75[ms]
+2020-04-01 18:19:46,980 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][After executing pipeline]memory usage 622579712
+2020-04-01 18:19:46,980 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][After executing pipeline]child memory usage 633888768
+2020-04-01 18:19:46,980 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][After executing pipeline]cpu time 7.582715
+2020-04-01 18:19:46,980 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][After executing pipeline]child cpu time 13.137059
+2020-04-01 18:19:46,980 - INFO - 306 : Pipeline execution finished with a score of 0.7111111111111111
+2020-04-01 18:19:46,980 - INFO - 306 : Start logging metrics for child run.
+2020-04-01 18:19:46,981 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-01 18:19:49,314 - INFO - 306 : memory usage 622956544
+2020-04-01 18:19:49,315 - INFO - 306 : child memory usage 634265600
+2020-04-01 18:19:49,315 - INFO - 306 : cpu time 7.727263
+2020-04-01 18:19:49,315 - INFO - 306 : child cpu time 13.137059
+2020-04-01 18:19:50,434 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-01 18:19:50,434 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-01 18:19:50,435 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-01 18:19:50,435 - INFO - 306 : run_id:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3, pipeline_id:75cc4131135a51744d748dedb03da83cafd8f63d,The following metrics have been logged for the child run: {'f1_score_weighted': 0.6443228454172367, 'AUC_weighted': 0.9503703703703703, 'AUC_macro': 0.9503703703703703, 'norm_macro_recall': 0.5666666666666667, 'precision_score_micro': 0.7111111111111111, 'recall_score_macro': 0.7111111111111111, 'accuracy': 0.7111111111111111, 'balanced_accuracy': 0.7111111111111111, 'average_precision_score_micro': 0.8910592130001813, 'log_loss': 0.7268316937732658, 'accuracy_table': <class 'dict'>, 'AUC_micro': 0.9325925925925925, 'average_precision_score_macro': 0.8894282512006969, 'f1_score_macro': 0.6443228454172366, 'f1_score_micro': 0.7111111111111111, 'recall_score_micro': 0.7111111111111111, 'weighted_accuracy': 0.7111111111111111, 'precision_score_weighted': 0.8452380952380952, 'precision_score_macro': 0.8452380952380952, 'average_precision_score_weighted': 0.889428251200697, 'recall_score_weighted': 0.7111111111111111, 'confusion_matrix': <class 'dict'>, 'predict_time': 0.001365, 'fit_time': 0.003625, 'train time': 0.00499}.
+2020-04-01 18:19:50,435 - INFO - 306 : Marking the Run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3 as Completed.
+2020-04-01 18:19:53,132 - INFO - 306 : Component CompleteRun finished after 0.18863693333333334 minutes.
+2020-04-01 18:19:53,133 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-01 18:19:53,134 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=6152.82[ms]
+2020-04-01 18:19:54,320 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][End fit_pipeline]memory usage 629370880
+2020-04-01 18:19:54,321 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][End fit_pipeline]child memory usage 640679936
+2020-04-01 18:19:54,321 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][End fit_pipeline]cpu time 7.966617
+2020-04-01 18:19:54,321 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3][End fit_pipeline]child cpu time 13.137059
+2020-04-01 18:19:54,330 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=15043.57 [ms]
+2020-04-01 18:19:54,331 - INFO - 306 : Start iteration: 4
+2020-04-01 18:19:54,331 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-01 18:19:54,331 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-01 18:19:54,331 - INFO - 306 : Querying Jasmine for next task.
+2020-04-01 18:19:54,871 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=540.27 [ms]
+2020-04-01 18:19:54,872 - INFO - 306 : Received pipeline ID __AutoML_Ensemble__
+2020-04-01 18:19:56,280 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:56,280 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:56,317 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Starting fit_pipeline]memory usage 629469184
+2020-04-01 18:19:56,317 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Starting fit_pipeline]child memory usage 640778240
+2020-04-01 18:19:56,317 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Starting fit_pipeline]cpu time 8.091284
+2020-04-01 18:19:56,317 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Starting fit_pipeline]child cpu time 13.137059
+2020-04-01 18:19:56,318 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480820736, swap memory: 0.
+2020-04-01 18:19:56,318 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-01 18:19:56,318 - INFO - 306 : Using child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4
+2020-04-01 18:19:56,353 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before preprocess]memory usage 630243328
+2020-04-01 18:19:56,353 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before preprocess]child memory usage 641552384
+2020-04-01 18:19:56,353 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before preprocess]cpu time 8.114235
+2020-04-01 18:19:56,354 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before preprocess]child cpu time 13.137059
+2020-04-01 18:19:56,376 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before executing pipeline]memory usage 630243328
+2020-04-01 18:19:56,377 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before executing pipeline]child memory usage 641552384
+2020-04-01 18:19:56,377 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before executing pipeline]cpu time 8.135671
+2020-04-01 18:19:56,377 - INFO - 306 : [RunId:AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4][Before executing pipeline]child cpu time 13.137059
+2020-04-01 18:19:56,377 - INFO - 306 : Start executing pipeline {"pipeline_id": "__AutoML_Ensemble__", "objects": [{"module": "azureml.train.automl.ensemble", "class_name": "Ensemble", "spec_class": "sklearn", "param_args": [], "param_kwargs": {"automl_settings": "{'task_type':'classification','primary_metric':'accuracy','debug_log':'automl.log','verbosity':20,'ensemble_iterations':6,'is_timeseries':False,'name':'autoMLdemo1','compute_target':'local','subscription_id':'6a0ec27b-1203-46fe-ade0-8c3003d5e4bc','region':'eastus2','spark_service':None}", "ensemble_run_id": "AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_4", "experiment_name": "autoMLdemo1", "workspace_name": "pythonsdkworkspace", "subscription_id": "6a0ec27b-1203-46fe-ade0-8c3003d5e4bc", "resource_group_name": "PythonSDK"}}]}.
+2020-04-01 18:19:56,377 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['SVM', 'LinearSVM', 'MultinomialNaiveBayes', 'BernoulliNaiveBayes', 'KNN', 'LogisticRegression', 'RandomForest', 'LinearSVMClassifier', 'LightGBM', 'DecisionTree', 'ExtremeRandomTrees', 'XGBoostClassifier', 'GradientBoosting', 'AveragedPerceptronClassifier', 'TensorFlowLinearClassifier', 'SGD', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-01 18:19:56,377 - INFO - 306 : Component PrepareData finished after 0.0016123499999999998 minutes.
+2020-04-01 18:19:56,378 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-01 18:19:56,441 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:19:56,887 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-01 18:19:56,887 - INFO - 306 : Calling function <bound method ClientRunner._run_ensembling_internal of <automl.client.core.runtime.runner.ClientRunner object at 0x7ff0e94304e0>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-01 18:19:59,365 - INFO - 306 : memory usage 630353920
+2020-04-01 18:19:59,366 - INFO - 306 : child memory usage 932990976
+2020-04-01 18:19:59,367 - INFO - 306 : cpu time 8.227365
+2020-04-01 18:19:59,367 - INFO - 306 : child cpu time 13.137059
+2020-04-01 18:20:00,433 - INFO - 448 : ActivityStarted: RunEnsembling
+2020-04-01 18:20:01,172 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:20:01,185 - INFO - 448 : ActivityStarted: TimeFitEnsemble
+2020-04-01 18:20:04,357 - INFO - 306 : Fetching fitted models for best 4 previous iterations
+2020-04-01 18:20:04,357 - INFO - 306 : ActivityStarted: DownloadEnsemblingModels
+2020-04-01 18:20:05,186 - INFO - 306 : Download fitted model of size 2380 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3
+2020-04-01 18:20:05,209 - INFO - 306 : Download fitted model of size 2386 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1
+2020-04-01 18:20:05,217 - INFO - 306 : Download fitted model of size 13388 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2
+2020-04-01 18:20:05,453 - INFO - 306 : Download fitted model of size 169026 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0
+2020-04-01 18:20:05,637 - INFO - 306 : ActivityCompleted: Activity=DownloadEnsemblingModels, HowEnded=Success, Duration=1279.75[ms]
+2020-04-01 18:20:06,932 - INFO - 306 : Fetched 4 fitted pipelines in 4 seconds
+2020-04-01 18:20:06,955 - INFO - 306 : Single models scores: [0.95555556 0.95555556 0.93333333 0.71111111]
+2020-04-01 18:20:06,956 - INFO - 306 : Starting ensemble hill climbing. Current ensemble: [0, 1, 2], current score: 0.9555555555555556
+2020-04-01 18:20:06,963 - INFO - 306 : Final ensemble: [0, 1, 2], score: 0.9555555555555556. Best individual model score: 0.9555555555555556
+2020-04-01 18:20:06,963 - INFO - 306 : Unique models IDs in the ensemble: [0, 1, 2]. Weights: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+2020-04-01 18:20:06,963 - INFO - 306 : Selected the pipelines for the ensemble in 0 seconds
+2020-04-01 18:20:07,958 - INFO - 306 : Ensembled iterations: [2, 0, 1]. Ensembled algos: ['ExtremeRandomTrees', 'LightGBM', 'SGD']
+2020-04-01 18:20:07,959 - INFO - 466 : ActivityCompleted: Activity=TimeFitEnsemble, HowEnded=Success, Duration=6773.54[ms]
+2020-04-01 18:20:07,960 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-01 18:20:07,960 - INFO - 448 : ActivityStarted: Predict
+2020-04-01 18:20:07,970 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=10.05[ms]
+2020-04-01 18:20:07,972 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-01 18:20:08,013 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=53.07[ms]
+2020-04-01 18:20:08,202 - INFO - 466 : ActivityCompleted: Activity=RunEnsembling, HowEnded=Success, Duration=7769.49[ms]
+2020-04-01 18:20:09,054 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=12676.28[ms]
+2020-04-01 18:20:20,058 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:20:21,158 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-01 18:20:21,171 - INFO - 306 : Calling function <bound method ClientRunner._run_ensembling_internal of <automl.client.core.runtime.runner.ClientRunner object at 0x7ff0e83d5e10>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-01 18:20:24,701 - INFO - 448 : ActivityStarted: RunEnsembling
+2020-04-01 18:20:26,047 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:20:26,049 - INFO - 448 : ActivityStarted: TimeFitEnsemble
+2020-04-01 18:20:29,470 - INFO - 306 : memory usage 639733760
+2020-04-01 18:20:29,471 - INFO - 306 : child memory usage 1194455040
+2020-04-01 18:20:29,471 - INFO - 306 : cpu time 9.089618
+2020-04-01 18:20:29,471 - INFO - 306 : child cpu time 17.548866
+2020-04-01 18:20:29,778 - INFO - 306 : Fetching fitted models for best 4 previous iterations
+2020-04-01 18:20:29,779 - INFO - 306 : ActivityStarted: DownloadEnsemblingModels
+2020-04-01 18:20:30,555 - INFO - 306 : Download fitted model of size 2386 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_1
+2020-04-01 18:20:30,572 - INFO - 306 : Download fitted model of size 13388 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_2
+2020-04-01 18:20:30,754 - INFO - 306 : Download fitted model of size 169026 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_0
+2020-04-01 18:20:35,403 - INFO - 306 : Download fitted model of size 2380 for child run AutoML_55ca6412-c36d-42c1-952b-8354c34970d3_3
+2020-04-01 18:20:35,562 - INFO - 306 : ActivityCompleted: Activity=DownloadEnsemblingModels, HowEnded=Success, Duration=5783.38[ms]
+2020-04-01 18:20:37,066 - INFO - 306 : Fetched 4 fitted pipelines in 10 seconds
+2020-04-01 18:20:37,088 - INFO - 306 : Single models scores: [0.95555556 0.95555556 0.93333333 0.71111111]
+2020-04-01 18:20:37,089 - INFO - 306 : Starting ensemble hill climbing. Current ensemble: [0, 1, 2], current score: 0.9555555555555556
+2020-04-01 18:20:37,096 - INFO - 306 : Final ensemble: [0, 1, 2], score: 0.9555555555555556. Best individual model score: 0.9555555555555556
+2020-04-01 18:20:37,096 - INFO - 306 : Unique models IDs in the ensemble: [0, 1, 2]. Weights: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+2020-04-01 18:20:37,096 - INFO - 306 : Selected the pipelines for the ensemble in 0 seconds
+2020-04-01 18:20:38,104 - INFO - 306 : Ensembled iterations: [2, 0, 1]. Ensembled algos: ['ExtremeRandomTrees', 'LightGBM', 'SGD']
+2020-04-01 18:20:38,104 - INFO - 306 : Creating a Stack Ensemble out of iterations: [0, 1, 2]
+2020-04-01 18:20:38,525 - INFO - 466 : ActivityCompleted: Activity=TimeFitEnsemble, HowEnded=Success, Duration=12476.04[ms]
+2020-04-01 18:20:38,527 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-01 18:20:38,527 - INFO - 448 : ActivityStarted: Predict
+2020-04-01 18:20:38,529 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=2.06[ms]
+2020-04-01 18:20:38,531 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-01 18:20:38,554 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=26.88[ms]
+2020-04-01 18:20:38,728 - INFO - 466 : ActivityCompleted: Activity=RunEnsembling, HowEnded=Success, Duration=14027.51[ms]
+2020-04-01 18:20:39,548 - INFO - 306 : memory usage 642183168
+2020-04-01 18:20:39,558 - INFO - 306 : child memory usage 1195139072
+2020-04-01 18:20:39,558 - INFO - 306 : cpu time 9.140543
+2020-04-01 18:20:39,566 - INFO - 306 : child cpu time 17.548866
+2020-04-01 18:20:40,023 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=20053.26[ms]
+2020-04-01 18:20:55,244 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:20:55,649 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:21:31,796 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-01 18:21:32,147 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:03:40,579 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:03:41,305 - INFO - 306 : Starting usage telemetry collection
+2020-04-02 13:03:51,376 - INFO - 306 : memory usage 502165504
+2020-04-02 13:03:51,384 - INFO - 306 : child memory usage 513470464
+2020-04-02 13:03:51,393 - INFO - 306 : cpu time 4.7758199999999995
+2020-04-02 13:03:51,398 - INFO - 306 : child cpu time 0.07139
+2020-04-02 13:03:56,364 - INFO - 306 : Extracting user Data
+2020-04-02 13:03:56,372 - INFO - 306 : User has validation defined, no train rule based validation needed.
+2020-04-02 13:03:56,382 - INFO - 306 : SDK dependencies versions:{"azureml-widgets": "1.0.83", "azureml-train": "1.0.83", "azureml-train-restclients-hyperdrive": "1.0.83", "azureml-train-core": "1.0.83", "azureml-train-automl": "1.0.83", "azureml-train-automl-runtime": "1.0.83.1", "azureml-train-automl-client": "1.0.83", "azureml-tensorboard": "1.0.83", "azureml-telemetry": "1.0.83", "azureml-sdk": "1.0.83", "azureml-samples": "0+unknown", "azureml-pipeline": "1.0.83", "azureml-pipeline-steps": "1.0.83", "azureml-pipeline-core": "1.0.83", "azureml-opendatasets": "1.0.83", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-mlflow": "1.0.83", "azureml-interpret": "1.0.83", "azureml-explain-model": "1.0.83", "azureml-defaults": "1.0.83", "azureml-dataprep": "1.1.35", "azureml-dataprep-native": "13.2.0", "azureml-datadrift": "1.0.83", "azureml-core": "1.0.83", "azureml-contrib-services": "1.0.83", "azureml-contrib-server": "1.0.83", "azureml-contrib-reinforcementlearning": "1.0.83", "azureml-contrib-pipeline-steps": "1.0.83", "azureml-contrib-notebook": "1.0.83", "azureml-contrib-interpret": "1.0.83", "azureml-contrib-datadrift": "1.0.83", "azureml-automl-runtime": "1.0.83", "azureml-automl-core": "1.0.83.1"}.
+2020-04-02 13:03:56,388 - INFO - 306 : Start creating parent run with DTO:  - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['DecisionTree', 'BernoulliNaiveBayes', 'RandomForest', 'SVM', 'SGD', 'TensorFlowDNN', 'XGBoostClassifier', 'MultinomialNaiveBayes', 'LogisticRegression', 'AveragedPerceptronClassifier', 'GradientBoosting', 'LightGBM', 'TensorFlowLinearClassifier', 'LinearSVM', 'ExtremeRandomTrees', 'KNN', 'LinearSVMClassifier']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off.
+2020-04-02 13:03:57,764 - INFO - 306 : [ParentRunID:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6] Local run using input X and y.
+2020-04-02 13:03:57,774 - INFO - 306 : Parent Run ID: AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6
+2020-04-02 13:03:57,774 - INFO - 306 : [ParentRunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6]Input X datatype is <class 'numpy.ndarray'>, shape is (105, 4), datasize is 3360.
+2020-04-02 13:03:57,774 - INFO - 306 : [ParentRunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6]Input y datatype is <class 'numpy.ndarray'>, shape is (105,), datasize is 840.
+2020-04-02 13:03:57,775 - INFO - 306 : ActivityStarted, PreProcess
+2020-04-02 13:03:57,775 - INFO - 306 : [ParentRunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6]Input X_valid datatype is <class 'numpy.ndarray'>, shape is (45, 4), datasize is 1440.
+2020-04-02 13:03:57,776 - INFO - 306 : [ParentRunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6]Input y_valid datatype is <class 'numpy.ndarray'>, shape is (45,), datasize is 360.
+2020-04-02 13:03:58,663 - INFO - 306 : Pre-processing user data
+2020-04-02 13:03:58,663 - INFO - 306 : The size of raw data is: 6415
+2020-04-02 13:03:58,670 - INFO - 306 : [YCol]RawFeatureStats:{"num_unique_vals": "3", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"integer\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-02 13:03:58,671 - INFO - 306 : [XColNum:0]RawFeatureStats:{"num_unique_vals": "32", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-02 13:03:58,672 - INFO - 306 : [XColNum:1]RawFeatureStats:{"num_unique_vals": "20", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-02 13:03:58,673 - INFO - 306 : [XColNum:2]RawFeatureStats:{"num_unique_vals": "38", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-02 13:03:58,674 - INFO - 306 : [XColNum:3]RawFeatureStats:{"num_unique_vals": "21", "total_number_vals": "105", "total_number_vals_including_nans": "105", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-04-02 13:03:58,675 - INFO - 306 : Start checking class balancing on y data.
+2020-04-02 13:03:58,675 - INFO - 306 : X datatype is <class 'numpy.ndarray'>, shape is (105, 4), datasize is 3360.
+2020-04-02 13:03:58,675 - INFO - 306 : y datatype is <class 'numpy.ndarray'>, shape is (105,), datasize is 840.
+2020-04-02 13:03:58,676 - INFO - 306 : X_valid datatype is <class 'numpy.ndarray'>, shape is (45, 4), datasize is 1440.
+2020-04-02 13:03:58,676 - INFO - 306 : y_valid datatype is <class 'numpy.ndarray'>, shape is (45,), datasize is 360.
+2020-04-02 13:03:58,676 - INFO - 306 : No preprocessing of data to be done here
+2020-04-02 13:04:00,597 - INFO - 306 : The size of transformed data is: 7005
+2020-04-02 13:04:00,598 - INFO - 306 : ActivityCompleted: Activity=PreProcess, HowEnded=Success, Duration=2823.35 [ms]
+2020-04-02 13:04:01,125 - INFO - 306 : Logging dataset information for AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6
+2020-04-02 13:04:01,125 - INFO - 306 : [ParentRunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6]X datatype is <class 'numpy.ndarray'>, shape is (105, 4), datasize is 3360.
+2020-04-02 13:04:01,126 - INFO - 306 : [ParentRunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6]y datatype is <class 'numpy.ndarray'>, shape is (105,), datasize is 840.
+2020-04-02 13:04:01,431 - INFO - 306 : memory usage 581103616
+2020-04-02 13:04:01,431 - INFO - 306 : child memory usage 592408576
+2020-04-02 13:04:01,431 - INFO - 306 : cpu time 6.512285
+2020-04-02 13:04:01,432 - INFO - 306 : child cpu time 0.07139
+2020-04-02 13:04:02,343 - INFO - 306 : Initialized ClientDatasets object from transformed_data_context.. deleting transformed_data_context.
+2020-04-02 13:04:05,239 - INFO - 306 : Start local loop.
+2020-04-02 13:04:05,240 - INFO - 306 : Start iteration: 0
+2020-04-02 13:04:05,248 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-02 13:04:05,249 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-02 13:04:05,249 - INFO - 306 : Querying Jasmine for next task.
+2020-04-02 13:04:05,724 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=475.02 [ms]
+2020-04-02 13:04:05,724 - INFO - 306 : Received pipeline ID 5dfac790c5c209f98a1da2dc1c7fb76f0397324f
+2020-04-02 13:04:07,131 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:07,131 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:07,166 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Starting fit_pipeline]memory usage 586031104
+2020-04-02 13:04:07,167 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Starting fit_pipeline]child memory usage 597336064
+2020-04-02 13:04:07,167 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Starting fit_pipeline]cpu time 6.96446
+2020-04-02 13:04:07,167 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Starting fit_pipeline]child cpu time 0.07139
+2020-04-02 13:04:07,168 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:07,168 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:07,169 - INFO - 306 : Using child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0
+2020-04-02 13:04:07,206 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before preprocess]memory usage 586756096
+2020-04-02 13:04:07,206 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before preprocess]child memory usage 598061056
+2020-04-02 13:04:07,207 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before preprocess]cpu time 6.986104
+2020-04-02 13:04:07,207 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before preprocess]child cpu time 0.07139
+2020-04-02 13:04:07,233 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before executing pipeline]memory usage 586756096
+2020-04-02 13:04:07,234 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before executing pipeline]child memory usage 598061056
+2020-04-02 13:04:07,234 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before executing pipeline]cpu time 7.008262
+2020-04-02 13:04:07,234 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][Before executing pipeline]child cpu time 0.07139
+2020-04-02 13:04:07,234 - INFO - 306 : Start executing pipeline {"objects": [{"spec_class": "preproc", "class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}}, {"spec_class": "sklearn", "class_name": "LightGBMClassifier", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"min_data_in_leaf": 20}, "prepared_kwargs": {}}], "pipeline_id": "5dfac790c5c209f98a1da2dc1c7fb76f0397324f", "module": "sklearn.pipeline", "class_name": "Pipeline"}.
+2020-04-02 13:04:07,235 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['DecisionTree', 'BernoulliNaiveBayes', 'RandomForest', 'SVM', 'SGD', 'TensorFlowDNN', 'XGBoostClassifier', 'MultinomialNaiveBayes', 'LogisticRegression', 'AveragedPerceptronClassifier', 'GradientBoosting', 'LightGBM', 'TensorFlowLinearClassifier', 'LinearSVM', 'ExtremeRandomTrees', 'KNN', 'LinearSVMClassifier']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-02 13:04:07,235 - INFO - 306 : Component PrepareData finished after 0.0017192499999999999 minutes.
+2020-04-02 13:04:07,235 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-02 13:04:07,602 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-02 13:04:07,602 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7faa04fbab70>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-02 13:04:11,473 - INFO - 306 : memory usage 587083776
+2020-04-02 13:04:11,474 - INFO - 306 : child memory usage 950788096
+2020-04-02 13:04:11,475 - INFO - 306 : cpu time 7.081982
+2020-04-02 13:04:11,476 - INFO - 306 : child cpu time 0.07139
+2020-04-02 13:04:11,660 - INFO - 448 : ActivityStarted: Run
+2020-04-02 13:04:12,130 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-02 13:04:12,132 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-02 13:04:12,215 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=83.6[ms]
+2020-04-02 13:04:12,216 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-02 13:04:12,217 - INFO - 448 : ActivityStarted: Predict
+2020-04-02 13:04:12,218 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.1[ms]
+2020-04-02 13:04:12,219 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-02 13:04:12,246 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=30.2[ms]
+2020-04-02 13:04:12,247 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=116.27[ms]
+2020-04-02 13:04:12,367 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=707.35[ms]
+2020-04-02 13:04:14,271 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=7035.4[ms]
+2020-04-02 13:04:14,307 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][After executing pipeline]memory usage 591138816
+2020-04-02 13:04:14,307 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][After executing pipeline]child memory usage 602443776
+2020-04-02 13:04:14,308 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][After executing pipeline]cpu time 7.160939
+2020-04-02 13:04:14,308 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][After executing pipeline]child cpu time 4.100414
+2020-04-02 13:04:14,308 - INFO - 306 : Pipeline execution finished with a score of 0.9555555555555556
+2020-04-02 13:04:14,308 - INFO - 306 : Start logging metrics for child run.
+2020-04-02 13:04:14,309 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-02 13:04:18,329 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-02 13:04:18,330 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-02 13:04:18,331 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-02 13:04:18,331 - INFO - 306 : run_id:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0, pipeline_id:5dfac790c5c209f98a1da2dc1c7fb76f0397324f,The following metrics have been logged for the child run: {'AUC_micro': 0.9925925925925926, 'log_loss': 0.23918095847885962, 'norm_macro_recall': 0.9333333333333332, 'recall_score_micro': 0.9555555555555556, 'average_precision_score_macro': 0.9945152505446623, 'weighted_accuracy': 0.9555555555555556, 'AUC_macro': 0.997037037037037, 'balanced_accuracy': 0.9555555555555556, 'f1_score_micro': 0.9555555555555556, 'recall_score_macro': 0.9555555555555556, 'f1_score_macro': 0.9553571428571429, 'precision_score_weighted': 0.9607843137254902, 'confusion_matrix': <class 'dict'>, 'accuracy_table': <class 'dict'>, 'f1_score_weighted': 0.9553571428571429, 'accuracy': 0.9555555555555556, 'AUC_weighted': 0.997037037037037, 'precision_score_macro': 0.9607843137254902, 'average_precision_score_micro': 0.9859506698494868, 'recall_score_weighted': 0.9555555555555556, 'precision_score_micro': 0.9555555555555556, 'average_precision_score_weighted': 0.9945152505446623, 'predict_time': 0.001827, 'fit_time': 0.083453, 'train time': 0.08528}.
+2020-04-02 13:04:18,331 - INFO - 306 : Marking the Run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0 as Completed.
+2020-04-02 13:04:19,867 - INFO - 306 : Component CompleteRun finished after 0.21224971666666667 minutes.
+2020-04-02 13:04:19,868 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-02 13:04:19,869 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=5560.06[ms]
+2020-04-02 13:04:21,218 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][End fit_pipeline]memory usage 599707648
+2020-04-02 13:04:21,219 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][End fit_pipeline]child memory usage 611012608
+2020-04-02 13:04:21,219 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][End fit_pipeline]cpu time 7.6041609999999995
+2020-04-02 13:04:21,219 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0][End fit_pipeline]child cpu time 4.197542
+2020-04-02 13:04:21,222 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=15973.67 [ms]
+2020-04-02 13:04:21,222 - INFO - 306 : Start iteration: 1
+2020-04-02 13:04:21,223 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-02 13:04:21,223 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-02 13:04:21,223 - INFO - 306 : Querying Jasmine for next task.
+2020-04-02 13:04:21,505 - INFO - 306 : memory usage 599777280
+2020-04-02 13:04:21,506 - INFO - 306 : child memory usage 611082240
+2020-04-02 13:04:21,508 - INFO - 306 : cpu time 7.623407
+2020-04-02 13:04:21,508 - INFO - 306 : child cpu time 4.197542
+2020-04-02 13:04:21,808 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=585.06 [ms]
+2020-04-02 13:04:21,809 - INFO - 306 : Received pipeline ID ebca1e73125a3c9a8c7ce93f7de1888095655021
+2020-04-02 13:04:23,237 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:23,238 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:23,274 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Starting fit_pipeline]memory usage 600776704
+2020-04-02 13:04:23,274 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Starting fit_pipeline]child memory usage 612081664
+2020-04-02 13:04:23,275 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Starting fit_pipeline]cpu time 7.737957
+2020-04-02 13:04:23,275 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Starting fit_pipeline]child cpu time 4.197542
+2020-04-02 13:04:23,276 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:23,276 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:23,277 - INFO - 306 : Using child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1
+2020-04-02 13:04:23,314 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before preprocess]memory usage 600776704
+2020-04-02 13:04:23,314 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before preprocess]child memory usage 612081664
+2020-04-02 13:04:23,315 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before preprocess]cpu time 7.76124
+2020-04-02 13:04:23,315 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before preprocess]child cpu time 4.197542
+2020-04-02 13:04:23,351 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before executing pipeline]memory usage 600776704
+2020-04-02 13:04:23,352 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before executing pipeline]child memory usage 612081664
+2020-04-02 13:04:23,352 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before executing pipeline]cpu time 7.78641
+2020-04-02 13:04:23,352 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][Before executing pipeline]child cpu time 4.197542
+2020-04-02 13:04:23,352 - INFO - 306 : Start executing pipeline {"objects": [{"class_name": "MinMaxScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "SGDClassifierWrapper", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"alpha": 0.8164183673469387, "class_weight": null, "eta0": 0.01, "fit_intercept": true, "l1_ratio": 0.36734693877551017, "learning_rate": "constant", "loss": "modified_huber", "max_iter": 1000, "penalty": "none", "power_t": 0.8888888888888888, "tol": 0.01}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "ebca1e73125a3c9a8c7ce93f7de1888095655021"}.
+2020-04-02 13:04:23,353 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['DecisionTree', 'BernoulliNaiveBayes', 'RandomForest', 'SVM', 'SGD', 'TensorFlowDNN', 'XGBoostClassifier', 'MultinomialNaiveBayes', 'LogisticRegression', 'AveragedPerceptronClassifier', 'GradientBoosting', 'LightGBM', 'TensorFlowLinearClassifier', 'LinearSVM', 'ExtremeRandomTrees', 'KNN', 'LinearSVMClassifier']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-02 13:04:23,353 - INFO - 306 : Component PrepareData finished after 0.0019008833333333333 minutes.
+2020-04-02 13:04:23,353 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-02 13:04:23,718 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-02 13:04:23,719 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fa9543a3ba8>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-02 13:04:27,562 - INFO - 448 : ActivityStarted: Run
+2020-04-02 13:04:27,900 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-02 13:04:27,901 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-02 13:04:27,904 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=2.79[ms]
+2020-04-02 13:04:27,905 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-02 13:04:27,906 - INFO - 448 : ActivityStarted: Predict
+2020-04-02 13:04:27,907 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.03[ms]
+2020-04-02 13:04:27,909 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-02 13:04:27,935 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=30.34[ms]
+2020-04-02 13:04:27,935 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=35.49[ms]
+2020-04-02 13:04:28,046 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=483.48[ms]
+2020-04-02 13:04:28,750 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=5396.13[ms]
+2020-04-02 13:04:28,788 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][After executing pipeline]memory usage 601616384
+2020-04-02 13:04:28,789 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][After executing pipeline]child memory usage 612921344
+2020-04-02 13:04:28,789 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][After executing pipeline]cpu time 7.887112
+2020-04-02 13:04:28,789 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][After executing pipeline]child cpu time 8.248479
+2020-04-02 13:04:28,789 - INFO - 306 : Pipeline execution finished with a score of 0.9333333333333333
+2020-04-02 13:04:28,790 - INFO - 306 : Start logging metrics for child run.
+2020-04-02 13:04:28,790 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-02 13:04:31,536 - INFO - 306 : memory usage 604151808
+2020-04-02 13:04:31,536 - INFO - 306 : child memory usage 615456768
+2020-04-02 13:04:31,537 - INFO - 306 : cpu time 8.019988
+2020-04-02 13:04:31,545 - INFO - 306 : child cpu time 8.248479
+2020-04-02 13:04:32,517 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-02 13:04:32,518 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-02 13:04:32,518 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-02 13:04:32,518 - INFO - 306 : run_id:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1, pipeline_id:ebca1e73125a3c9a8c7ce93f7de1888095655021,The following metrics have been logged for the child run: {'AUC_micro': 0.9930864197530863, 'log_loss': 0.3822082998520432, 'norm_macro_recall': 0.8999999999999997, 'recall_score_micro': 0.9333333333333333, 'average_precision_score_macro': 0.979078024372142, 'weighted_accuracy': 0.9333333333333333, 'AUC_macro': 0.9888888888888889, 'balanced_accuracy': 0.9333333333333332, 'f1_score_micro': 0.9333333333333333, 'recall_score_macro': 0.9333333333333332, 'f1_score_macro': 0.9332591768631814, 'precision_score_weighted': 0.9345238095238095, 'confusion_matrix': <class 'dict'>, 'accuracy_table': <class 'dict'>, 'f1_score_weighted': 0.9332591768631814, 'accuracy': 0.9333333333333333, 'AUC_weighted': 0.9888888888888889, 'precision_score_macro': 0.9345238095238096, 'average_precision_score_micro': 0.9865573844928096, 'recall_score_weighted': 0.9333333333333333, 'precision_score_micro': 0.9333333333333333, 'average_precision_score_weighted': 0.9790780243721421, 'predict_time': 0.002131, 'fit_time': 0.002631, 'train time': 0.004762000000000001}.
+2020-04-02 13:04:32,518 - INFO - 306 : Marking the Run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1 as Completed.
+2020-04-02 13:04:34,021 - INFO - 306 : Component CompleteRun finished after 0.17969441666666666 minutes.
+2020-04-02 13:04:34,021 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-02 13:04:34,021 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=5231.31[ms]
+2020-04-02 13:04:35,365 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][End fit_pipeline]memory usage 608743424
+2020-04-02 13:04:35,365 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][End fit_pipeline]child memory usage 620048384
+2020-04-02 13:04:35,366 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][End fit_pipeline]cpu time 8.23892
+2020-04-02 13:04:35,366 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1][End fit_pipeline]child cpu time 8.248479
+2020-04-02 13:04:35,377 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=14154.26 [ms]
+2020-04-02 13:04:35,377 - INFO - 306 : Start iteration: 2
+2020-04-02 13:04:35,378 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-02 13:04:35,378 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-02 13:04:35,378 - INFO - 306 : Querying Jasmine for next task.
+2020-04-02 13:04:36,592 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1213.65 [ms]
+2020-04-02 13:04:36,593 - INFO - 306 : Received pipeline ID fc458caef1af1a907c9958484a5909cf538b016d
+2020-04-02 13:04:38,300 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:38,301 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:38,346 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Starting fit_pipeline]memory usage 608788480
+2020-04-02 13:04:38,347 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Starting fit_pipeline]child memory usage 620093440
+2020-04-02 13:04:38,347 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Starting fit_pipeline]cpu time 8.38933
+2020-04-02 13:04:38,347 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Starting fit_pipeline]child cpu time 8.248479
+2020-04-02 13:04:38,349 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:38,349 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:38,349 - INFO - 306 : Using child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2
+2020-04-02 13:04:38,375 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before preprocess]memory usage 608788480
+2020-04-02 13:04:38,376 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before preprocess]child memory usage 620093440
+2020-04-02 13:04:38,376 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before preprocess]cpu time 8.427904999999999
+2020-04-02 13:04:38,376 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before preprocess]child cpu time 8.248479
+2020-04-02 13:04:38,413 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before executing pipeline]memory usage 608788480
+2020-04-02 13:04:38,413 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before executing pipeline]child memory usage 620093440
+2020-04-02 13:04:38,414 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before executing pipeline]cpu time 8.442918
+2020-04-02 13:04:38,414 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][Before executing pipeline]child cpu time 8.248479
+2020-04-02 13:04:38,414 - INFO - 306 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": true, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesClassifier", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "class_weight": "balanced", "criterion": "entropy", "max_features": 0.9, "min_samples_leaf": 0.08736842105263157, "min_samples_split": 0.15052631578947367, "n_estimators": 10, "oob_score": true}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "fc458caef1af1a907c9958484a5909cf538b016d"}.
+2020-04-02 13:04:38,415 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['DecisionTree', 'BernoulliNaiveBayes', 'RandomForest', 'SVM', 'SGD', 'TensorFlowDNN', 'XGBoostClassifier', 'MultinomialNaiveBayes', 'LogisticRegression', 'AveragedPerceptronClassifier', 'GradientBoosting', 'LightGBM', 'TensorFlowLinearClassifier', 'LinearSVM', 'ExtremeRandomTrees', 'KNN', 'LinearSVMClassifier']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-02 13:04:38,415 - INFO - 306 : Component PrepareData finished after 0.0018899166666666667 minutes.
+2020-04-02 13:04:38,415 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-02 13:04:38,774 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-02 13:04:38,775 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fa9553dba20>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-02 13:04:41,586 - INFO - 306 : memory usage 608796672
+2020-04-02 13:04:41,587 - INFO - 306 : child memory usage 924434432
+2020-04-02 13:04:41,588 - INFO - 306 : cpu time 8.535239
+2020-04-02 13:04:41,588 - INFO - 306 : child cpu time 8.248479
+2020-04-02 13:04:42,461 - INFO - 448 : ActivityStarted: Run
+2020-04-02 13:04:42,800 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-02 13:04:42,802 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-02 13:04:42,813 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=10.75[ms]
+2020-04-02 13:04:42,814 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-02 13:04:42,814 - INFO - 448 : ActivityStarted: Predict
+2020-04-02 13:04:42,816 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.41[ms]
+2020-04-02 13:04:42,817 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-02 13:04:42,845 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=31.5[ms]
+2020-04-02 13:04:42,845 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=44.71[ms]
+2020-04-02 13:04:42,964 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=502.93[ms]
+2020-04-02 13:04:43,622 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=5206.95[ms]
+2020-04-02 13:04:43,658 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][After executing pipeline]memory usage 611368960
+2020-04-02 13:04:43,658 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][After executing pipeline]child memory usage 622673920
+2020-04-02 13:04:43,658 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][After executing pipeline]cpu time 8.576581000000001
+2020-04-02 13:04:43,659 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][After executing pipeline]child cpu time 12.235397
+2020-04-02 13:04:43,659 - INFO - 306 : Pipeline execution finished with a score of 0.9333333333333333
+2020-04-02 13:04:43,659 - INFO - 306 : Start logging metrics for child run.
+2020-04-02 13:04:43,659 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-02 13:04:47,395 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-02 13:04:47,396 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-02 13:04:47,397 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-02 13:04:47,397 - INFO - 306 : run_id:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2, pipeline_id:fc458caef1af1a907c9958484a5909cf538b016d,The following metrics have been logged for the child run: {'AUC_micro': 0.9851851851851852, 'log_loss': 0.3531736373788446, 'norm_macro_recall': 0.8999999999999997, 'recall_score_micro': 0.9333333333333333, 'average_precision_score_macro': 0.9803649237472767, 'weighted_accuracy': 0.9333333333333333, 'AUC_macro': 0.9888888888888889, 'balanced_accuracy': 0.9333333333333332, 'f1_score_micro': 0.9333333333333333, 'recall_score_macro': 0.9333333333333332, 'f1_score_macro': 0.9326599326599326, 'precision_score_weighted': 0.9444444444444444, 'confusion_matrix': <class 'dict'>, 'accuracy_table': <class 'dict'>, 'f1_score_weighted': 0.9326599326599326, 'accuracy': 0.9333333333333333, 'AUC_weighted': 0.9888888888888889, 'precision_score_macro': 0.9444444444444445, 'average_precision_score_micro': 0.9730741194987248, 'recall_score_weighted': 0.9333333333333333, 'precision_score_micro': 0.9333333333333333, 'average_precision_score_weighted': 0.9803649237472766, 'predict_time': 0.002222, 'fit_time': 0.010556, 'train time': 0.012778}.
+2020-04-02 13:04:47,397 - INFO - 306 : Marking the Run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2 as Completed.
+2020-04-02 13:04:48,834 - INFO - 306 : Component CompleteRun finished after 0.17553688333333334 minutes.
+2020-04-02 13:04:48,834 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-02 13:04:48,835 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=5176.11[ms]
+2020-04-02 13:04:50,013 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][End fit_pipeline]memory usage 613519360
+2020-04-02 13:04:50,014 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][End fit_pipeline]child memory usage 624824320
+2020-04-02 13:04:50,014 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][End fit_pipeline]cpu time 8.932389
+2020-04-02 13:04:50,014 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2][End fit_pipeline]child cpu time 12.235397
+2020-04-02 13:04:50,017 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=14639.07 [ms]
+2020-04-02 13:04:50,017 - INFO - 306 : Start iteration: 3
+2020-04-02 13:04:50,017 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-02 13:04:50,018 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-02 13:04:50,018 - INFO - 306 : Querying Jasmine for next task.
+2020-04-02 13:04:51,624 - INFO - 306 : memory usage 613556224
+2020-04-02 13:04:51,626 - INFO - 306 : child memory usage 624861184
+2020-04-02 13:04:51,634 - INFO - 306 : cpu time 8.96443
+2020-04-02 13:04:51,635 - INFO - 306 : child cpu time 12.235397
+2020-04-02 13:04:51,637 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1619.18 [ms]
+2020-04-02 13:04:51,637 - INFO - 306 : Received pipeline ID 75cc4131135a51744d748dedb03da83cafd8f63d
+2020-04-02 13:04:53,068 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:53,069 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:53,106 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Starting fit_pipeline]memory usage 613605376
+2020-04-02 13:04:53,107 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Starting fit_pipeline]child memory usage 624910336
+2020-04-02 13:04:53,107 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Starting fit_pipeline]cpu time 9.082841
+2020-04-02 13:04:53,108 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Starting fit_pipeline]child cpu time 12.235397
+2020-04-02 13:04:53,109 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:04:53,109 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:04:53,109 - INFO - 306 : Using child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3
+2020-04-02 13:04:53,136 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before preprocess]memory usage 613605376
+2020-04-02 13:04:53,136 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before preprocess]child memory usage 624910336
+2020-04-02 13:04:53,136 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before preprocess]cpu time 9.112871
+2020-04-02 13:04:53,137 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before preprocess]child cpu time 12.235397
+2020-04-02 13:04:53,173 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before executing pipeline]memory usage 613605376
+2020-04-02 13:04:53,173 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before executing pipeline]child memory usage 624910336
+2020-04-02 13:04:53,173 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before executing pipeline]cpu time 9.126115
+2020-04-02 13:04:53,174 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][Before executing pipeline]child cpu time 12.235397
+2020-04-02 13:04:53,174 - INFO - 306 : Start executing pipeline {"objects": [{"class_name": "MinMaxScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "SGDClassifierWrapper", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"alpha": 8.775522448979592, "class_weight": "balanced", "eta0": 0.01, "fit_intercept": true, "l1_ratio": 0.8775510204081632, "learning_rate": "constant", "loss": "log", "max_iter": 1000, "penalty": "none", "power_t": 0.2222222222222222, "tol": 0.01}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "75cc4131135a51744d748dedb03da83cafd8f63d"}.
+2020-04-02 13:04:53,174 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['DecisionTree', 'BernoulliNaiveBayes', 'RandomForest', 'SVM', 'SGD', 'TensorFlowDNN', 'XGBoostClassifier', 'MultinomialNaiveBayes', 'LogisticRegression', 'AveragedPerceptronClassifier', 'GradientBoosting', 'LightGBM', 'TensorFlowLinearClassifier', 'LinearSVM', 'ExtremeRandomTrees', 'KNN', 'LinearSVMClassifier']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-02 13:04:53,175 - INFO - 306 : Component PrepareData finished after 0.0017575833333333332 minutes.
+2020-04-02 13:04:53,175 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-02 13:04:53,540 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-02 13:04:53,540 - INFO - 306 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fa954356c50>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-02 13:04:58,025 - INFO - 448 : ActivityStarted: Run
+2020-04-02 13:04:58,315 - INFO - 448 : ActivityStarted: TrainValid
+2020-04-02 13:04:58,316 - INFO - 448 : ActivityStarted: TimeFit
+2020-04-02 13:04:58,320 - INFO - 466 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=3.19[ms]
+2020-04-02 13:04:58,320 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-02 13:04:58,321 - INFO - 448 : ActivityStarted: Predict
+2020-04-02 13:04:58,322 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=0.97[ms]
+2020-04-02 13:04:58,323 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-02 13:04:58,350 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=29.85[ms]
+2020-04-02 13:04:58,350 - INFO - 466 : ActivityCompleted: Activity=TrainValid, HowEnded=Success, Duration=35.43[ms]
+2020-04-02 13:04:58,471 - INFO - 466 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=446.11[ms]
+2020-04-02 13:04:59,215 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=6039.47[ms]
+2020-04-02 13:04:59,252 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][After executing pipeline]memory usage 613613568
+2020-04-02 13:04:59,253 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][After executing pipeline]child memory usage 624918528
+2020-04-02 13:04:59,253 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][After executing pipeline]cpu time 9.209004
+2020-04-02 13:04:59,253 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][After executing pipeline]child cpu time 16.342189
+2020-04-02 13:04:59,253 - INFO - 306 : Pipeline execution finished with a score of 0.7111111111111111
+2020-04-02 13:04:59,254 - INFO - 306 : Start logging metrics for child run.
+2020-04-02 13:04:59,254 - INFO - 306 : ActivityStarted: MetricsAndSaveModel
+2020-04-02 13:05:01,665 - INFO - 306 : memory usage 615067648
+2020-04-02 13:05:01,666 - INFO - 306 : child memory usage 626372608
+2020-04-02 13:05:01,666 - INFO - 306 : cpu time 9.346919
+2020-04-02 13:05:01,667 - INFO - 306 : child cpu time 16.342189
+2020-04-02 13:05:02,899 - WARNING - 306 : Did not recognize metric: predict_time. Will not log.
+2020-04-02 13:05:02,899 - WARNING - 306 : Did not recognize metric: fit_time. Will not log.
+2020-04-02 13:05:02,899 - WARNING - 306 : Did not recognize metric: train time. Will not log.
+2020-04-02 13:05:02,900 - INFO - 306 : run_id:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3, pipeline_id:75cc4131135a51744d748dedb03da83cafd8f63d,The following metrics have been logged for the child run: {'AUC_micro': 0.9325925925925925, 'log_loss': 0.7268699867177245, 'norm_macro_recall': 0.5666666666666667, 'recall_score_micro': 0.7111111111111111, 'average_precision_score_macro': 0.8894282512006969, 'weighted_accuracy': 0.7111111111111111, 'AUC_macro': 0.9503703703703703, 'balanced_accuracy': 0.7111111111111111, 'f1_score_micro': 0.7111111111111111, 'recall_score_macro': 0.7111111111111111, 'f1_score_macro': 0.6443228454172366, 'precision_score_weighted': 0.8452380952380952, 'confusion_matrix': <class 'dict'>, 'accuracy_table': <class 'dict'>, 'f1_score_weighted': 0.6443228454172367, 'accuracy': 0.7111111111111111, 'AUC_weighted': 0.9503703703703703, 'precision_score_macro': 0.8452380952380952, 'average_precision_score_micro': 0.8910592130001813, 'recall_score_weighted': 0.7111111111111111, 'precision_score_micro': 0.7111111111111111, 'average_precision_score_weighted': 0.889428251200697, 'predict_time': 0.001716, 'fit_time': 0.00305, 'train time': 0.004766}.
+2020-04-02 13:05:02,900 - INFO - 306 : Marking the Run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3 as Completed.
+2020-04-02 13:05:04,874 - INFO - 306 : Component CompleteRun finished after 0.1967504833333333 minutes.
+2020-04-02 13:05:04,875 - INFO - 306 : Bypassing model explanations as the explanations for the best run will be performed during training
+2020-04-02 13:05:04,876 - INFO - 306 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=5622.02[ms]
+2020-04-02 13:05:06,050 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][End fit_pipeline]memory usage 621453312
+2020-04-02 13:05:06,051 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][End fit_pipeline]child memory usage 632758272
+2020-04-02 13:05:06,051 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][End fit_pipeline]cpu time 9.597036
+2020-04-02 13:05:06,051 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3][End fit_pipeline]child cpu time 16.342189
+2020-04-02 13:05:06,054 - INFO - 306 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=16036.2 [ms]
+2020-04-02 13:05:06,054 - INFO - 306 : Start iteration: 4
+2020-04-02 13:05:06,054 - INFO - 306 : ActivityStarted, FitIteration
+2020-04-02 13:05:06,055 - INFO - 306 : ActivityStarted, GetPipeline
+2020-04-02 13:05:06,055 - INFO - 306 : Querying Jasmine for next task.
+2020-04-02 13:05:06,580 - INFO - 306 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=525.29 [ms]
+2020-04-02 13:05:06,580 - INFO - 306 : Received pipeline ID __AutoML_Ensemble__
+2020-04-02 13:05:07,978 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:05:07,978 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:05:08,015 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Starting fit_pipeline]memory usage 621559808
+2020-04-02 13:05:08,015 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Starting fit_pipeline]child memory usage 632864768
+2020-04-02 13:05:08,015 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Starting fit_pipeline]cpu time 9.724438
+2020-04-02 13:05:08,016 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Starting fit_pipeline]child cpu time 16.342189
+2020-04-02 13:05:08,017 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4]CPU logical cores: 8, CPU cores: 8, virtual memory: 29480816640, swap memory: 0.
+2020-04-02 13:05:08,017 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4]Platform information: Linux-4.15.0-1066-azure-x86_64-with-debian-stretch-sid.
+2020-04-02 13:05:08,017 - INFO - 306 : Using child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4
+2020-04-02 13:05:08,055 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before preprocess]memory usage 621559808
+2020-04-02 13:05:08,056 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before preprocess]child memory usage 632864768
+2020-04-02 13:05:08,056 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before preprocess]cpu time 9.751169
+2020-04-02 13:05:08,056 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before preprocess]child cpu time 16.342189
+2020-04-02 13:05:08,083 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before executing pipeline]memory usage 621559808
+2020-04-02 13:05:08,083 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before executing pipeline]child memory usage 632864768
+2020-04-02 13:05:08,084 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before executing pipeline]cpu time 9.776783
+2020-04-02 13:05:08,084 - INFO - 306 : [RunId:AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4][Before executing pipeline]child cpu time 16.342189
+2020-04-02 13:05:08,084 - INFO - 306 : Start executing pipeline {"pipeline_id": "__AutoML_Ensemble__", "objects": [{"module": "azureml.train.automl.ensemble", "class_name": "Ensemble", "spec_class": "sklearn", "param_args": [], "param_kwargs": {"automl_settings": "{'task_type':'classification','primary_metric':'accuracy','debug_log':'automl.log','verbosity':20,'ensemble_iterations':6,'is_timeseries':False,'name':'autoMLdemo1','compute_target':'local','subscription_id':'6a0ec27b-1203-46fe-ade0-8c3003d5e4bc','region':'eastus2','spark_service':None}", "ensemble_run_id": "AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_4", "experiment_name": "autoMLdemo1", "workspace_name": "pythonsdkworkspace", "subscription_id": "6a0ec27b-1203-46fe-ade0-8c3003d5e4bc", "resource_group_name": "PythonSDK"}}]}.
+2020-04-02 13:05:08,084 - INFO - 306 : Running with the following AutoML settings:
+ - name: autoMLdemo1
+ - subscription_id: 6a0ec27b-1203-46fe-ade0-8c3003d5e4bc
+ - region: eastus2
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 6
+ - primary_metric: accuracy
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: None
+ - y_min: None
+ - y_max: None
+ - num_classes: 3
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 12000
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'Prophet']
+ - supported_models: ['DecisionTree', 'BernoulliNaiveBayes', 'RandomForest', 'SVM', 'SGD', 'TensorFlowDNN', 'XGBoostClassifier', 'MultinomialNaiveBayes', 'LogisticRegression', 'AveragedPerceptronClassifier', 'GradientBoosting', 'LightGBM', 'TensorFlowLinearClassifier', 'LinearSVM', 'ExtremeRandomTrees', 'KNN', 'LinearSVMClassifier']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: True
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - force_text_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 6
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - cost_mode: 0
+ - metric_operation: maximize
+ - featurization: off
+2020-04-02 13:05:08,085 - INFO - 306 : Component PrepareData finished after 0.0017545833333333333 minutes.
+2020-04-02 13:05:08,085 - INFO - 306 : ActivityStarted: RunPipeline
+2020-04-02 13:05:08,092 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:05:08,487 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-02 13:05:08,488 - INFO - 306 : Calling function <bound method ClientRunner._run_ensembling_internal of <automl.client.core.runtime.runner.ClientRunner object at 0x7fa954355048>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-02 13:05:11,716 - INFO - 306 : memory usage 621588480
+2020-04-02 13:05:11,717 - INFO - 306 : child memory usage 939249664
+2020-04-02 13:05:11,726 - INFO - 306 : cpu time 9.85482
+2020-04-02 13:05:11,726 - INFO - 306 : child cpu time 16.342189
+2020-04-02 13:05:12,631 - INFO - 448 : ActivityStarted: RunEnsembling
+2020-04-02 13:05:13,403 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:05:13,428 - INFO - 448 : ActivityStarted: TimeFitEnsemble
+2020-04-02 13:05:16,303 - INFO - 306 : Fetching fitted models for best 4 previous iterations
+2020-04-02 13:05:16,303 - INFO - 306 : ActivityStarted: DownloadEnsemblingModels
+2020-04-02 13:05:17,173 - INFO - 306 : Download fitted model of size 2380 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3
+2020-04-02 13:05:17,187 - INFO - 306 : Download fitted model of size 13868 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2
+2020-04-02 13:05:17,198 - INFO - 306 : Download fitted model of size 2386 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1
+2020-04-02 13:05:17,356 - INFO - 306 : Download fitted model of size 169026 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0
+2020-04-02 13:05:17,567 - INFO - 306 : ActivityCompleted: Activity=DownloadEnsemblingModels, HowEnded=Success, Duration=1264.24[ms]
+2020-04-02 13:05:19,017 - INFO - 306 : Fetched 4 fitted pipelines in 4 seconds
+2020-04-02 13:05:19,027 - INFO - 306 : Single models scores: [0.95555556 0.93333333 0.93333333 0.71111111]
+2020-04-02 13:05:19,028 - INFO - 306 : Starting ensemble hill climbing. Current ensemble: [0, 1, 2], current score: 0.9333333333333333
+2020-04-02 13:05:19,037 - INFO - 306 : Iteration 2, new best ensemble: [0, 1, 2, 0, 0, 0], new best score :0.9555555555555556
+2020-04-02 13:05:19,037 - INFO - 306 : Final ensemble: [0, 1, 2, 0, 0, 0], score: 0.9555555555555556. Best individual model score: 0.9555555555555556
+2020-04-02 13:05:19,037 - INFO - 306 : Unique models IDs in the ensemble: [0, 1, 2]. Weights: [0.6666666666666666, 0.16666666666666666, 0.16666666666666666]
+2020-04-02 13:05:19,038 - INFO - 306 : Selected the pipelines for the ensemble in 0 seconds
+2020-04-02 13:05:20,307 - INFO - 306 : Ensembled iterations: [0, 2, 1]. Ensembled algos: ['LightGBM', 'ExtremeRandomTrees', 'SGD']
+2020-04-02 13:05:20,308 - INFO - 466 : ActivityCompleted: Activity=TimeFitEnsemble, HowEnded=Success, Duration=6879.24[ms]
+2020-04-02 13:05:20,309 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-02 13:05:20,309 - INFO - 448 : ActivityStarted: Predict
+2020-04-02 13:05:20,312 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=2.74[ms]
+2020-04-02 13:05:20,314 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-02 13:05:20,342 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=33.84[ms]
+2020-04-02 13:05:20,535 - INFO - 466 : ActivityCompleted: Activity=RunEnsembling, HowEnded=Success, Duration=7904.01[ms]
+2020-04-02 13:05:21,356 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=13271.25[ms]
+2020-04-02 13:05:33,133 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:05:33,534 - INFO - 306 : Limits set to mem_in_mb=None, wall_time_in_s=720000, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-04-02 13:05:33,540 - INFO - 306 : Calling function <bound method ClientRunner._run_ensembling_internal of <automl.client.core.runtime.runner.ClientRunner object at 0x7fa95432c128>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-04-02 13:05:37,471 - INFO - 448 : ActivityStarted: RunEnsembling
+2020-04-02 13:05:38,910 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:05:39,008 - INFO - 448 : ActivityStarted: TimeFitEnsemble
+2020-04-02 13:05:41,839 - INFO - 306 : memory usage 630185984
+2020-04-02 13:05:41,848 - INFO - 306 : child memory usage 1184342016
+2020-04-02 13:05:41,857 - INFO - 306 : cpu time 10.705651
+2020-04-02 13:05:41,862 - INFO - 306 : child cpu time 21.7304
+2020-04-02 13:05:42,394 - INFO - 306 : Fetching fitted models for best 4 previous iterations
+2020-04-02 13:05:42,400 - INFO - 306 : ActivityStarted: DownloadEnsemblingModels
+2020-04-02 13:05:43,189 - INFO - 306 : Download fitted model of size 2380 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_3
+2020-04-02 13:05:43,210 - INFO - 306 : Download fitted model of size 13868 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_2
+2020-04-02 13:05:43,255 - INFO - 306 : Download fitted model of size 2386 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_1
+2020-04-02 13:05:43,502 - INFO - 306 : Download fitted model of size 169026 for child run AutoML_74b2853e-7e4b-4ed6-9eeb-33ee2b0401e6_0
+2020-04-02 13:05:43,669 - INFO - 306 : ActivityCompleted: Activity=DownloadEnsemblingModels, HowEnded=Success, Duration=1269.03[ms]
+2020-04-02 13:05:45,125 - INFO - 306 : Fetched 4 fitted pipelines in 5 seconds
+2020-04-02 13:05:45,143 - INFO - 306 : Single models scores: [0.95555556 0.93333333 0.93333333 0.71111111]
+2020-04-02 13:05:45,164 - INFO - 306 : Starting ensemble hill climbing. Current ensemble: [0, 1, 2], current score: 0.9333333333333333
+2020-04-02 13:05:45,178 - INFO - 306 : Iteration 2, new best ensemble: [0, 1, 2, 0, 0, 0], new best score :0.9555555555555556
+2020-04-02 13:05:45,184 - INFO - 306 : Final ensemble: [0, 1, 2, 0, 0, 0], score: 0.9555555555555556. Best individual model score: 0.9555555555555556
+2020-04-02 13:05:45,189 - INFO - 306 : Unique models IDs in the ensemble: [0, 1, 2]. Weights: [0.6666666666666666, 0.16666666666666666, 0.16666666666666666]
+2020-04-02 13:05:45,189 - INFO - 306 : Selected the pipelines for the ensemble in 0 seconds
+2020-04-02 13:05:46,630 - INFO - 306 : Ensembled iterations: [0, 2, 1]. Ensembled algos: ['LightGBM', 'ExtremeRandomTrees', 'SGD']
+2020-04-02 13:05:46,630 - INFO - 306 : Creating a Stack Ensemble out of iterations: [0, 1, 2]
+2020-04-02 13:05:47,233 - INFO - 466 : ActivityCompleted: Activity=TimeFitEnsemble, HowEnded=Success, Duration=8225.15[ms]
+2020-04-02 13:05:47,235 - INFO - 448 : ActivityStarted: ComputeMetrics
+2020-04-02 13:05:47,236 - INFO - 448 : ActivityStarted: Predict
+2020-04-02 13:05:47,238 - INFO - 466 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=2.74[ms]
+2020-04-02 13:05:47,240 - INFO - 306 : Classification metrics debug: {'y_test': (45,), 'y_pred_probs': (45, 3), 'unique_y_test': (3,), 'class_labels': (3,), 'train_labels': (3,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2020-04-02 13:05:47,267 - INFO - 466 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=32.16[ms]
+2020-04-02 13:05:47,461 - INFO - 466 : ActivityCompleted: Activity=RunEnsembling, HowEnded=Success, Duration=9990.65[ms]
+2020-04-02 13:05:48,824 - INFO - 306 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=15757.92[ms]
+2020-04-02 13:05:59,566 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:05:59,906 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:14:20,562 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-04-02 13:14:20,938 - WARNING - 306 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
