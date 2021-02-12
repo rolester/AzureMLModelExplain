@@ -55,6 +55,8 @@ environment:
       username:
 # The password for ACR
       password:
+# RegistryIdentity
+      registryIdentity:
 # Spark details
   spark:
 # List of spark repositories.
@@ -75,6 +77,8 @@ environment:
     jarLibraries: []
 # List of Egg libraries
     eggLibraries: []
+# R details
+  r:
 # Inferencing stack version
   inferencingStackVersion:
 # History details.
@@ -107,6 +111,14 @@ tensorflow:
 mpi:
 # When using MPI, number of processes per node.
   processCountPerNode: 1
+# ParallelTask details.
+paralleltask:
+# Maximum number of retries per worker. Default 0.
+  maxRetriesPerWorker: 0
+# The number of workers/processes per node. Default 1.
+  workerCountPerNode: 1
+# Worker exit codes to terminate job.
+  terminalExitCodes:
 # data reference configuration details
 dataReferences: {}
 # The configuration details for data.

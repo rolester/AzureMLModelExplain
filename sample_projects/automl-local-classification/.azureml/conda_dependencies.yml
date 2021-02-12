@@ -15,4 +15,5 @@ dependencies:
   - azureml-defaults
 
 channels:
+- anaconda
 - conda-forge
